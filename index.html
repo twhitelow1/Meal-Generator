@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meal Generator</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Modak&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body onload="printMenu()">
+        <header><H1>Meal Generator</H1></p></header>
+        <div class="maincontent">
+            <p id="instructions">Use the form below to add a dish to the menu. The menu will populate below. When you are ready to generate a meal click the "Generate Meal" button below the menu.</p>
+           
+            <form name="AddDish" method="POST" onsubmit="addDish()">
+                <label for="name"> Dish Name: </label>
+                    <input type="text" id ="name" name="name"><br />
+                <label for="Price"> Price: </label>
+                    <input type="text" id="price" name="price"><br />
+                <label for="course-select"> Course: </label>
+                    <select id="course-select" name='course-select'>
+                        <!--- <option value="">--Please choose an option--</option> --->
+                        <option value="appetizer">Appetizer</option>
+                        <option value="main">Main</option>
+                        <option value="dessert">Dessert</option>
+                    </select><br />
+                <input type="submit" value="Add Dish">
+            </form>
+
+            <h2 id='menu-header'>Menu</h2>
+            <p id='menu-body'></p>
+            <h2 id="heading">Your Generated Meal</h2>
+            <p id="Meal"> </p>
+            <button type="button" onclick="generatorClicked()">Generate Meal</input>
+        </div>
+        <script src="menu.js"> </script>
+        <footer>Copyright Meal Generator 2020</footer>
+    </body>
+    
+</html>
