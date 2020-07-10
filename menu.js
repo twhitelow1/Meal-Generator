@@ -94,16 +94,15 @@ const menu = {
       }
 
       addDish = () =>{
-        menu.addDishToCourse( 'appetizer', 'test', 'price'); 
-          //const course = document.forms['AddDish']['course-select'].value;
-          //const name = document.forms['AddDish']['name'].value;
-         // const price = document.forms['AddDish']['price'].value;
-         /* if(course.toLowerCase() === ''){
+          const course = document.forms['AddDish']['course-select'].value;
+          const name = document.forms['AddDish']['name'].value;
+          const price = document.forms['AddDish']['price'].value;
+          if(course.toLowerCase() === ''){
             return alert('pick a course!');
           }else{
-            menu.addDishToCourse( 'appetizer', 'test', 'price'); 
+            menu.addDishToCourse('appetizer', 'test', 'price'); 
             return alert(`Added ${name} for $${price} to ${course}`);
-          }  */     
+          }       
       }
 
       generatorClicked = () =>{
