@@ -62,22 +62,22 @@ const menu = {
         const desserts = this._courses['desserts']
         let text = '<h3 class=\'menu-heading\'>Appetizers</h2>';
         for(i = 0; i < appetizers.length; i++){
-            text += appetizers[i].name + '<br />';
+            text += `<p>${appetizers[i].name} </p>`;
         }
         text += '<h3 class=\'menu-heading\'> Entrees </h3>';
         for(i = 0; i < mains.length; i++){
-            text += mains[i].name + '<br />';
+            text += `<p>${mains[i].name} </p>`;
         }
         text += '<h3 class=\'menu-heading\'> Desserts </h3>';
         for(i = 0; i < desserts.length; i++){
-            text += desserts[i].name + '<br />';
+            text += `<p>${desserts[i].name} </p>`;
         }
 
         document.getElementById('menu-body').innerHTML = text;
       }
 
   }
-  
+      /*
       menu.addDishToCourse('appetizers', 'Caesar Salad', 10);
       menu.addDishToCourse('appetizers', 'Seitan Wings', 12);
       menu.addDishToCourse('appetizers', 'Bavarian Pretzel', 14);
@@ -87,6 +87,7 @@ const menu = {
       menu.addDishToCourse('desserts', 'NY Style Cheesecake', 8);
       menu.addDishToCourse('desserts', 'Apple Pie', 6);
       menu.addDishToCourse('desserts', 'Double Chocolate Cake', 6);
+      */
   
       printMenu = () =>{
           myMenu = menu.displayAppMenu()
@@ -96,13 +97,15 @@ const menu = {
       addDish = () =>{
           const course = document.forms['AddDish']['course-select'].value;
           const name = document.forms['AddDish']['name'].value;
-          const price = document.forms['AddDish']['price'].value;
-          if(course.toLowerCase() === ''){
-            return alert('pick a course!');
-          }else{
-            menu.addDishToCourse('appetizer', 'test', 'price'); 
-            return alert(`Added ${name} for $${price} to ${course}`);
-          }       
+          const price = parseInt(document.forms['AddDish']['price'].value);
+            menu.addDishToCourse(`${course}`, `${name}`, price); 
+            printMenu();
+            document.getElementById('AddDish').reset();
+            console.log(`Added ${name} for $${price} to ${course}`);   
+      }
+
+      deleteDish = (dish) =>{
+
       }
 
       generatorClicked = () =>{
