@@ -3,19 +3,22 @@
 body{
     text-align: center;
     margin: auto;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     /*min-height: 200px;*/
   }
 footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     background-color:rgb(25, 0, 255);
     color:rgb(255, 255, 255);
-    font-size: 12px;
-    min-height: 25px;
-    vertical-align: center;
-    position: relative;
+    font-size: 1em;
+    min-height: 50px;
     bottom:0px;
     width: 100%;
+    
 }
 .container{
     display: flex;
@@ -35,12 +38,11 @@ footer{
 }
 header{
     display: flex;
-    margin: 0px auto 0px auto;
-    text-align: center;
     background-color: rgb(25, 0, 255);
     color: rgb(255, 255, 255);
     font-family: 'Bebas Neue', cursive;
-    font-size: 30px;
+    font-size: 3em;
+    letter-spacing: .1em;
     width: 100%;
     justify-content: center;
 }
