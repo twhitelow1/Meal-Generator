@@ -56,7 +56,10 @@ const menu = {
         const main = this.getRandomDishFromCourse('mains');
         const dessert = this.getRandomDishFromCourse('desserts');
         const totalPrice = appetizer.price + main.price + dessert.price;
-        return `Your meal will start with ${appetizer.name} and you main course will be ${main.name}. After the main course you will end your meal with a delicious ${menu.name} The price is $${totalPrice}.`;
+        return `<p class="meal-p">Appetizer:  ${appetizer.name}<p/>
+        <p class="meal-p">Entree: ${main.name}<p/>
+        <p class="meal-p">Dessert: ${dessert.name} <p/>
+        <p class="meal-p">The total price is $${totalPrice}.<p/>`;
       },   
 
       displayAppMenu(){
@@ -116,5 +119,5 @@ const menu = {
         meal = menu.generateRandomMeal(); 
         document.getElementById('Meal').innerHTML = meal;
         document.getElementById('heading').style.display = 'inline-flex';
-        document.getElementById('instructions').style.display = 'none';
+        document.querySelector('.menu-container').style.display = 'none';
       }
