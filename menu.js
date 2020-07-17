@@ -40,6 +40,9 @@ const menu = {
   
         this._courses[courseName].push(dish);
       },
+      removeDishFromCourse(courseName, id){
+        this._courses[courseName].splice(id,1);
+      },
   
       getRandomDishFromCourse(courseName){
         const dishes = this._courses[courseName];
@@ -62,15 +65,15 @@ const menu = {
         const desserts = this._courses['desserts']
         let text = '<h3 class=\'menu-heading\'>Appetizers</h2>';
         for(i = 0; i < appetizers.length; i++){
-            text += `<p>${appetizers[i].name} </p>`;
+            text += `<p num="${i}" onclick="deleteDish('appetizers', ${i})" course="appetizers">${appetizers[i].name} </p>`;
         }
         text += '<h3 class=\'menu-heading\'> Entrees </h3>';
         for(i = 0; i < mains.length; i++){
-            text += `<p>${mains[i].name} </p>`;
+            text += `<p num="${i}" course="mains">${mains[i].name} </p>`;
         }
         text += '<h3 class=\'menu-heading\'> Desserts </h3>';
         for(i = 0; i < desserts.length; i++){
-            text += `<p>${desserts[i].name} </p>`;
+            text += `<p num="${i}" course="desserts">${desserts[i].name} </p>`;
         }
 
         document.getElementById('menu-body').innerHTML = text;
@@ -104,8 +107,9 @@ const menu = {
             console.log(`Added ${name} for $${price} to ${course}`);   
       }
 
-      deleteDish = (dish) =>{
-
+      deleteDish = (course, i) =>{
+        menu.removeDishFromCourse(course, i);
+        printMenu();
       }
 
       generatorClicked = () =>{
