@@ -7,33 +7,54 @@
     </head>
     <script src="menu.js"> </script>
     <body onload="printMenu()">
-        <header><H1>Meal Generator</H1></p></header>
-        <div class="maincontent">
-            <p id="instructions">Use the form below to add a dish to the menu. The menu will populate below. When you are ready to generate a meal click the "Generate Meal" button below the menu.</p>
-           
-            <form name="AddDish" id="AddDish">
-                <label for="name"> Dish Name: </label>
-                    <input type="text" id ="name" name="name"><br />
-                <label for="Price"> Price: </label>
-                    <input type="text" id="price" name="price"><br />
-                <label for="course-select"> Course: </label>
-                    <select id="course-select" name='course-select'>
-                        <!--- <option value="">--Please choose an option--</option> --->
-                        <option value="appetizers">Appetizer</option>
-                        <option value="mains">Main</option>
-                        <option value="desserts">Dessert</option>
-                    </select><br />
-                <input type="button" value="Add Dish" onclick="addDish()">
-            </form>
+        <div class="container">
+            <header><H1>Meal Generator</H1></header>
+            <div class="maincontent">
 
-            <h2 id='menu-header'>Menu</h2>
-            <p id='menu-body'></p>
-            <h2 id="heading">Your Generated Meal</h2>
-            <p id="Meal"> </p>
-            <button type="button" onclick="generatorClicked()">Generate Meal</input>
+                <div class="row"> 
+
+                    <div class="instructions-container">   
+                        <p id="instructions">Use the form below to add a dish to the menu. The menu will populate below. When you are ready to generate a meal click the "Generate Meal" button below the menu.</p>
+                    </div>
+
+                    <div class="form-container">
+                        <form name="AddDish" id="AddDish">
+                            <label for="name"> Dish Name: </label>
+                                <input type="text" id ="name" name="name"><br />
+                            <label for="Price"> Price: </label>
+                                <input type="text" id="price" name="price"><br />
+                            <label for="course-select"> Course: </label>
+                                <select id="course-select" name='course-select'>
+                                    <!--- <option value="">--Please choose an option--</option> --->
+                                    <option value="appetizers">Appetizer</option>
+                                    <option value="mains">Main</option>
+                                    <option value="desserts">Dessert</option>
+                                </select><br />
+                            <input type="button" value="Add Dish" onclick="addDish()">
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="menu-container">
+                        <h2 id='menu-header'>Menu</h2>
+                        <div id='menu-body'><p></p></div>
+                    </div>
+
+                    <div class="meal-container">
+                        <h2 id="heading">Your Generated Meal</h2>
+                        <div id="Meal"> </div>
+                        <button type="button" onclick="generatorClicked()">Generate Meal</button>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            <footer>Copyright Meal Generator 2020</footer>
         </div>
-        
-        <footer>Copyright Meal Generator 2020</footer>
     </body>
     
 </html>

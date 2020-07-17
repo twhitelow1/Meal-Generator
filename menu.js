@@ -115,6 +115,6 @@ const menu = {
       generatorClicked = () =>{
         meal = menu.generateRandomMeal(); 
         document.getElementById('Meal').innerHTML = meal;
-        document.getElementById('heading').style.display = 'inherit';
+        document.getElementById('heading').style.display = 'inline-flex';
         document.getElementById('instructions').style.display = 'none';
       }
